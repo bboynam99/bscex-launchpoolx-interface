@@ -18,7 +18,7 @@ import useBSCXPrice from '../../../hooks/useBSCXPrice'
 import usePoolActive from '../../../hooks/usePoolActive'
 import useStakedValue from '../../../hooks/useStakedValue'
 import useSushi from '../../../hooks/useSushi'
-import { NUMBER_BLOCKS_PER_YEAR, START_NEW_POOL_AT } from '../../../sushi/lib/constants'
+import { NUMBER_BLOCKS_PER_YEAR, START_NEW_POOL_AT, PROJECTS } from '../../../sushi/lib/constants'
 import { getEarned, getMasterChefContract, getNewRewardPerBlock } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
@@ -65,24 +65,34 @@ const FarmCards: React.FC = () => {
   )
 
   return (
-    <StyledCards>
-      {!!rows[0].length ? (
-        rows.map((farmRow, i) => (
-          <StyledRow key={i}>
-            {farmRow.map((farm, j) => (
-              <React.Fragment key={j}>
-                <FarmCard farm={farm} />
-                {(j === 0 || j === 1) && <StyledSpacer />}
-              </React.Fragment>
-            ))}
-          </StyledRow>
-        ))
-      ) : (
-        <StyledLoadingWrapper>
-          <Loader text="Cooking the rice ..." />
-        </StyledLoadingWrapper>
-      )}
-    </StyledCards>
+    <div>
+      {Object.entries(PROJECTS).map(([key, project]) => (
+        <div>
+          <div style={{ marginBottom: '6px', fontSize: 14, color: '#ffffff' }}>
+            {project.name}
+            <StyledSpacer />
+          </div>
+          <StyledCards>
+            {!!rows[0].length ? (
+              rows.map((farmRow, i) => (
+                <StyledRow key={i}>
+                  {farmRow.map((farm, j) => (<>
+                    {farm.project === key && <React.Fragment key={j}>
+                      <FarmCard farm={farm} />
+                      {(j === 0 || j === 1) && <StyledSpacer />}
+                    </React.Fragment>}</>
+                  ))}
+                </StyledRow>
+              ))
+            ) : (
+              <StyledLoadingWrapper>
+                <Loader text="Cooking the rice ..." />
+              </StyledLoadingWrapper>
+            )}
+          </StyledCards>
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -92,8 +102,6 @@ interface FarmCardProps {
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   let poolActive = usePoolActive(farm.pid)
-  // poolActive = false
-
   const sushi = useSushi()
 
   const [newReward, setNewRewad] = useState<BigNumber>()

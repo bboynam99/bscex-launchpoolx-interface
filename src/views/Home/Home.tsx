@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import Button from '../../components/Button'
@@ -12,6 +13,7 @@ import CustomCountDown from './components/CustomCountDown'
 import Icon_Tip from '../../assets/img/pro-tip-icon.svg'
 import { START_REWARD_AT_BLOCK } from '../../sushi/lib/constants'
 import BscxLogo from '../../assets/img/logo-icon.svg'
+import CopyIcon from '../../assets/img/copy.png'
 import FarmCards from '../Farms/components/FarmCards'
 import TotalLockValue from './components/TotalLockValue'
 
@@ -45,8 +47,11 @@ const Home: React.FC = () => {
         <div style={{fontWeight: 'bold', fontSize: 22, color: '#ffffff'}}>
             BSCX Price: <span style={{color: '#F3BA2F', fontSize: 30}}>$<TotalLockValue /></span>
         </div>
-        {account && <div style={{marginTop: '12px', fontWeight: 'normal', fontSize: 14, color: '#ffffff'}}>
+        {account && <div style={{marginTop: '12px', fontWeight: 'normal', fontSize: 14, color: '#ffffff', display: 'flex', alignItems: 'center'}}>
             Your referral link: {account.substr(0, 5)}...{account.substr(account.length - 5, 5)}
+            <CopyToClipboard text={siteUrl + account}>
+              <span><img src={CopyIcon} height="26" style={{ cursor: 'pointer', marginLeft: '6px' }} /></span>
+            </CopyToClipboard>
         </div>}
         {block < launchBlock && atDate && <>
             <Spacer size="sm" />

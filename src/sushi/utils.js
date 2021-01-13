@@ -60,6 +60,7 @@ export const getFarms = (sushi) => {
     ? sushi.contracts.pools.map(
         ({
           pid,
+          project,
           name,
           symbol,
           icon,
@@ -83,6 +84,7 @@ export const getFarms = (sushi) => {
           removeLiquidityLink,
         }) => ({
           pid,
+          project,
           id: symbol,
           name,
           lpToken: symbol,

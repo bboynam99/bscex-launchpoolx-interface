@@ -42,6 +42,17 @@ export const addressMap = {
   SUSHIYCRV: '0x2C7a51A357d5739C5C74Bf3C96816849d2c9F726',
 }
 
+export const PROJECTS = {
+  BSCX: {
+    name: 'BSCX',
+    logo: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png'
+  },
+  ZD: {
+    name: 'ezDeFi',
+    logo: 'https://github.com/ezDeFi/ezdefi-media/blob/master/ezdefi-logo/icon.png'
+  }
+}
+
 // TODO: change the address & set LP pool
 export const contractAddresses = {
   sushi: {
@@ -69,6 +80,7 @@ export const contractAddresses = {
 export const supportedPools = [
   {
     pid: 0,
+    project: 'BSCX',
     lpAddresses: {
       56: '0xaAc5ee3361dA99d3770ff480fC0E2686FfEba302',
       97: '0xaC6A00ec0224cC582AFC6c9119fc80D4466238d3',
@@ -99,6 +111,7 @@ export const supportedPools = [
   },
   {
     pid: 1,
+    project: 'BSCX',
     lpAddresses: {
       56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
       97: '0x8390ba50006860538936c96c1f283019fbe72bfd',
@@ -117,6 +130,130 @@ export const supportedPools = [
     description: `Deposit BSCX-BUSD LP Earn BSCX`,
     tokenSymbol: 'BSCX',
     token2Symbol: 'BUSD',
+    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
+    isHot: true,
+    isNew: true,
+    protocal: 'BSCEX',
+    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    pairLink: '/',
+    addLiquidityLink: 'https://swap.bscex.org/#/add/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    removeLiquidityLink: 'https://swap.bscex.org/#/remove/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+  },
+  // {
+  //   pid: 1,
+  //   project: 'BSCX',
+  //   lpAddresses: {
+  //     56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
+  //     97: '0x8390ba50006860538936c96c1f283019fbe72bfd',
+  //   },
+  //   tokenAddresses: {
+  //     56: '0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
+  //     97: '0x7d7f7bbc88239cc2463797632faf94aa1088c7d2',
+  //   },
+  //   token2Addresses: {
+  //     56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+  //     97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee'
+  //   },
+  //   name: 'BSCX - BUSD 2',
+  //   symbol: 'BSCX-BUSD 2 LP',
+  //   symbolShort: 'BSCX-BUSD',
+  //   description: `Deposit BSCX-BUSD LP Earn BSCX`,
+  //   tokenSymbol: 'BSCX',
+  //   token2Symbol: 'BUSD',
+  //   icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+  //   icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
+  //   isHot: true,
+  //   isNew: true,
+  //   protocal: 'BSCEX',
+  //   iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+  //   pairLink: '/',
+  //   addLiquidityLink: 'https://swap.bscex.org/#/add/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+  //   removeLiquidityLink: 'https://swap.bscex.org/#/remove/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+  // },
+  {
+    pid: 1,
+    project: 'ZD',
+    lpAddresses: {
+      56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
+      97: '0x8390ba50006860538936c96c1f283019fbe72bfd',
+    },
+    tokenAddresses: {
+      56: '0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
+      97: '0x7d7f7bbc88239cc2463797632faf94aa1088c7d2',
+    },
+    token2Addresses: {
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+      97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee'
+    },
+    name: 'BSCX - ZD 2',
+    symbol: 'BSCX-ZD 2 LP',
+    symbolShort: 'BSCX-ZD',
+    description: `Deposit BSCX-ZD LP Earn BSCX`,
+    tokenSymbol: 'BSCX',
+    token2Symbol: 'ZD',
+    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
+    isHot: true,
+    isNew: true,
+    protocal: 'BSCEX',
+    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    pairLink: '/',
+    addLiquidityLink: 'https://swap.bscex.org/#/add/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    removeLiquidityLink: 'https://swap.bscex.org/#/remove/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+  },
+  {
+    pid: 1,
+    project: 'ZD',
+    lpAddresses: {
+      56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
+      97: '0x8390ba50006860538936c96c1f283019fbe72bfd',
+    },
+    tokenAddresses: {
+      56: '0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
+      97: '0x7d7f7bbc88239cc2463797632faf94aa1088c7d2',
+    },
+    token2Addresses: {
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+      97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee'
+    },
+    name: 'BSCX - ZD 2',
+    symbol: 'BSCX-ZD 2 LP',
+    symbolShort: 'BSCX-ZD',
+    description: `Deposit BSCX-ZD LP Earn BSCX`,
+    tokenSymbol: 'BSCX',
+    token2Symbol: 'ZD',
+    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
+    isHot: true,
+    isNew: true,
+    protocal: 'BSCEX',
+    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    pairLink: '/',
+    addLiquidityLink: 'https://swap.bscex.org/#/add/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    removeLiquidityLink: 'https://swap.bscex.org/#/remove/0x5Ac52EE5b2a633895292Ff6d8A89bB9190451587/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+  },
+  {
+    pid: 1,
+    project: 'ZD',
+    lpAddresses: {
+      56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
+      97: '0x8390ba50006860538936c96c1f283019fbe72bfd',
+    },
+    tokenAddresses: {
+      56: '0x5ac52ee5b2a633895292ff6d8a89bb9190451587',
+      97: '0x7d7f7bbc88239cc2463797632faf94aa1088c7d2',
+    },
+    token2Addresses: {
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+      97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee'
+    },
+    name: 'BSCX - ZD 2',
+    symbol: 'BSCX-ZD 2 LP',
+    symbolShort: 'BSCX-ZD',
+    description: `Deposit BSCX-ZD LP Earn BSCX`,
+    tokenSymbol: 'BSCX',
+    token2Symbol: 'ZD',
     icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
     icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
     isHot: true,

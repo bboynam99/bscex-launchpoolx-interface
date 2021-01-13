@@ -33,7 +33,7 @@ const AccountButton: React.FC<AccountButtonProps> = (props) => {
         <Button onClick={handleUnlockClick} size="sm" variant="secondary" text="Unlock Wallet" />
       ) : (
         <BoxWallet>
-            <div>{account.substr(0, 7)}...</div>
+            <div>{account.substr(0, 4)}...{account.substr(account.length - 3, 3)}</div>
             <Button onClick={onPresentAccountModal} size="sm" variant="secondary" text="My Wallet" />
         </BoxWallet>
       )}
