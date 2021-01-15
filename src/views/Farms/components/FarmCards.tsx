@@ -54,11 +54,12 @@ const FarmCards: React.FC = () => {
         bscxPrice
       }
       const newFarmRows = [...farmRows]
-      if (newFarmRows[newFarmRows.length - 1].length === 3) {
-        newFarmRows.push([farmWithStakedValue])
-      } else {
-        newFarmRows[newFarmRows.length - 1].push(farmWithStakedValue)
-      }
+      // if (newFarmRows[newFarmRows.length - 1].length === 3) {
+      //   newFarmRows.push([farmWithStakedValue])
+      // } else {
+      //   newFarmRows[newFarmRows.length - 1].push(farmWithStakedValue)
+      // }
+      newFarmRows[newFarmRows.length - 1].push(farmWithStakedValue)
       return newFarmRows
     },
     [[]],
@@ -68,8 +69,8 @@ const FarmCards: React.FC = () => {
     <div>
       {Object.entries(PROJECTS).map(([key, project]) => (
         <div>
-          <div style={{ marginBottom: '6px', fontSize: 14, color: '#ffffff' }}>
-            {project.name}
+          <div style={{ marginBottom: '6px', fontSize: 16, fontWeight: 'bold', color: '#ffffff', display: 'flex', alignItems: 'center' }}>
+            <img src={project.logo} height="36" style={{ marginRight: '6px' }} /> {project.name}
             <StyledSpacer />
           </div>
           <StyledCards>
@@ -79,7 +80,6 @@ const FarmCards: React.FC = () => {
                   {farmRow.map((farm, j) => (<>
                     {farm.project === key && <React.Fragment key={j}>
                       <FarmCard farm={farm} />
-                      {(j === 0 || j === 1) && <StyledSpacer />}
                     </React.Fragment>}</>
                   ))}
                 </StyledRow>
@@ -275,6 +275,7 @@ const StyledCardWrapper = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  margin: 10px 6px;
 `
 
 const StyledTitle = styled.h4`

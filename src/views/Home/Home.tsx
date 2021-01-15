@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         {account && <div style={{marginTop: '12px', fontWeight: 'normal', fontSize: 14, color: '#ffffff', display: 'flex', alignItems: 'center'}}>
             Your referral link: {account.substr(0, 5)}...{account.substr(account.length - 5, 5)}
             <CopyToClipboard text={siteUrl + account}>
-              <span><img src={CopyIcon} height="26" style={{ cursor: 'pointer', marginLeft: '6px' }} /></span>
+              <span><img title="Copy" src={CopyIcon} height="26" style={{ cursor: 'pointer', marginLeft: '6px' }} /></span>
             </CopyToClipboard>
         </div>}
         {block < launchBlock && atDate && <>
